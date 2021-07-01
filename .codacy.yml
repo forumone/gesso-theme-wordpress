@@ -1,0 +1,25 @@
+---
+engines:
+  phpcs:
+    enabled: true
+    php_version: 7.3
+  eslint:
+    enabled: true
+    exclude_paths:
+      - '**/*.svg'
+      - '**/*.artifact.scss'
+  remark-lint:
+    enabled: false
+languages:
+  php:
+    extensions:
+      - '.php'
+exclude_paths:
+  - 'pattern-lab/**'
+  - 'css/**'
+  - 'images/**'
+  - 'js/dist/**'
+  - 'js/libraries/**'
+  - 'node_modules/**'
+  - 'vendor/**'
+  - 'lib/**'
