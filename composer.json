@@ -1,0 +1,46 @@
+{
+	"name": "forumone/gesso-wp",
+	"description": "The Forum One Gesso WordPress starter theme.",
+	"type": "wordpress-theme",
+	"homepage": "https://github.com/forumone/gesso-wp",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Forum One",
+			"email": "wordpress@forumone.com",
+			"homepage": "https://www.forumone.com/"
+		}
+	],
+	"config": {
+		"platform": {
+			"php": "7.3"
+		},
+		"optimize-autoloader": true
+	},
+	"require-dev": {
+		"php": ">=7.3.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+		"squizlabs/php_codesniffer": "^3.5",
+		"wp-coding-standards/wpcs": "^2.3",
+		"phpcompatibility/php-compatibility": "^9.3",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"roave/security-advisories": "dev-master",
+		"sensiolabs/security-checker": "^5.0"
+	},
+	"scripts": {
+		"install-codestandards": [
+			"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+		],
+		"post-install-cmd": [
+			"@install-codestandards"
+		],
+		"post-update-cmd": [
+			"@install-codestandards"
+		],
+		"lint": "vendor/bin/phpcs --report=full .",
+		"lint-fix": "vendor/bin/phpcbf"
+	},
+	"extra": {
+		"phpcodesniffer-search-depth": 5
+	}
+}
